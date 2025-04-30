@@ -465,6 +465,13 @@ footer {
     margin-bottom: 50px;
 }
 
+.category-link-wrapper {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
 .category-card {
     background: white;
     border-radius: 10px;
@@ -514,7 +521,6 @@ footer {
     display: inline-flex;
     align-items: center;
     color: #333;
-    text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -524,11 +530,11 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.category-link:hover {
+.category-card:hover .category-link {
     color: #000;
 }
 
-.category-link:hover i {
+.category-card:hover .category-link i {
     transform: translateX(5px);
 }
 
