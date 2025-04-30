@@ -29,6 +29,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Hakkında linklerini seç
+    const aboutLinks = document.querySelectorAll('a[href="#hakkimizda"]');
+    const aboutSection = document.getElementById('hakkimizda');
+
+    // Hakkında linklerine tıklama olayı ekle
+    aboutLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Mobil menüyü kapat
+            navLinks.classList.remove('active');
+            
+            // Hakkımızda bölümüne yumuşak kaydırma
+            aboutSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
+
     // Kategori kartlarını seç
     const categoryCards = document.querySelectorAll('.category-card');
     const searchInput = document.getElementById('categorySearch');
