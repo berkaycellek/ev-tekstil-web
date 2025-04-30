@@ -12,8 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdowns.forEach(dropdown => {
         if (window.innerWidth <= 768) {
             dropdown.addEventListener('click', function(e) {
-                e.preventDefault();
-                this.classList.toggle('active');
+                // Sadece dropdown toggle'a tıklandığında menüyü aç/kapat
+                if (e.target.classList.contains('dropdown-toggle')) {
+                    e.preventDefault();
+                    this.classList.toggle('active');
+                }
             });
         }
     });
