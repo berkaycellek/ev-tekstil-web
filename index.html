@@ -6,7 +6,7 @@
     <title>Ev Tekstil - Çantalar, Halılar ve Banyo Paspasları</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="sticky-header">
@@ -37,11 +37,22 @@
 
     <main>
         <section class="hero">
+            <video autoplay muted loop playsinline class="hero-video" poster="hero-poster.jpg">
+                <source src="hero-video.mp4" type="video/mp4">
+            </video>
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1 class="fade-in">Evinize Şıklık Katın</h1>
-                <p class="fade-in">Özenle seçilmiş koleksiyonumuzla evinizi baştan yaratın</p>
-                <a href="#kategoriler" class="cta-button fade-in">Koleksiyonu Keşfet</a>
+                <span class="hero-subtitle fade-in">Ev Tekstil Koleksiyonu</span>
+                <h1 class="hero-title fade-in">Evinize Şıklık Katın</h1>
+                <p class="hero-description fade-in">Özenle seçilmiş koleksiyonumuzla yaşam alanlarınızı yeniden tasarlayın</p>
+                <div class="hero-buttons fade-in">
+                    <a href="#kategoriler" class="cta-button primary">Koleksiyonu Keşfet</a>
+                    <a href="/iletisim" class="cta-button secondary">Bize Ulaşın</a>
+                </div>
+                <div class="scroll-indicator fade-in">
+                    <span>Aşağı Kaydır</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
             </div>
         </section>
 
