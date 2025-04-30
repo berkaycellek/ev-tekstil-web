@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobil menü toggle
     mobileMenuBtn.addEventListener('click', function() {
         navLinks.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     });
 
     // Mobil dropdown toggle
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.nav-container')) {
             navLinks.classList.remove('active');
+            document.body.style.overflow = '';
             dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
         }
     });
@@ -40,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Mobil menüyü kapat
             navLinks.classList.remove('active');
+            document.body.style.overflow = '';
             
             // Hakkımızda bölümüne yumuşak kaydırma
             aboutSection.scrollIntoView({
@@ -47,6 +50,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 block: 'start'
             });
         });
+    });
+
+    // Lazy Loading için Intersection Observer
+    const lazyLoadObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.add('loaded');
+                lazyLoadObserver.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '50px 0px',
+        threshold: 0.1
+    });
+
+    // Lazy loading için resimleri seç
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        lazyLoadObserver.observe(img);
+    });
+
+    // Animasyon için Intersection Observer
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Animasyonlu elementleri seç
+    document.querySelectorAll('.lazy-load').forEach(element => {
+        animationObserver.observe(element);
     });
 
     // Kategori kartlarını seç
@@ -59,11 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
         categoryCards.forEach(card => {
             const title = card.querySelector('h3').textContent.toLowerCase();
             const description = card.querySelector('p').textContent.toLowerCase();
-            const tags = Array.from(card.querySelectorAll('.filter-tag')).map(tag => tag.textContent.toLowerCase());
 
             const matches = title.includes(searchTerm) || 
-                          description.includes(searchTerm) || 
-                          tags.some(tag => tag.includes(searchTerm));
+                          description.includes(searchTerm);
 
             card.style.display = matches ? 'block' : 'none';
         });
@@ -75,27 +112,15 @@ document.addEventListener('DOMContentLoaded', function() {
         performSearch(searchTerm);
     });
 
-    // Animasyon efekti için Intersection Observer
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Her kategori kartına animasyon ekle
-    categoryCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(card);
+    // Performans optimizasyonu için scroll event throttling
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                // Scroll ile ilgili işlemler
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 }); 
