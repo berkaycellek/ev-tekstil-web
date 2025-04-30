@@ -1,0 +1,13 @@
+{
+  "name": "ev-tekstil-web",
+  "version": "1.0.0",
+  "description": "Ev Tekstil Web Sitesi",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "dev": "live-server"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+} 
