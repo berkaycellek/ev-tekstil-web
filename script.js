@@ -4,18 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropdowns = document.querySelectorAll('.dropdown');
 
     // Mobil menü toggle
-    mobileMenuBtn.addEventListener('click', function() {
+    mobileMenuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
         navLinks.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     });
 
     // Mobil dropdown toggle
     dropdowns.forEach(dropdown => {
         if (window.innerWidth <= 768) {
             dropdown.addEventListener('click', function(e) {
-                // Sadece dropdown toggle'a tıklandığında menüyü aç/kapat
                 if (e.target.classList.contains('dropdown-toggle')) {
                     e.preventDefault();
+                    e.stopPropagation();
                     this.classList.toggle('active');
                 }
             });
@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.nav-container')) {
             navLinks.classList.remove('active');
-            document.body.style.overflow = '';
             dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
         }
     });
@@ -42,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Mobil menüyü kapat
             navLinks.classList.remove('active');
-            document.body.style.overflow = '';
             
             // Hakkımızda bölümüne yumuşak kaydırma
             aboutSection.scrollIntoView({
