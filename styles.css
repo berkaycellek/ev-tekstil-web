@@ -379,40 +379,54 @@ img {
 }
 
 @media (max-width: 768px) {
-    .mobile-menu-btn {
-        display: block;
-    }
-
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        flex-direction: column;
-        padding: 1rem;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
     .hero {
-        min-height: 500px;
+        height: 100vh;
+        padding-top: 60px;
     }
 
     .hero-content {
         padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+        text-align: center;
+        max-width: 90%;
     }
 
     .hero-buttons {
         flex-direction: column;
-        align-items: stretch;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        width: 100%;
+        max-width: 280px;
     }
 
     .cta-button {
         width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
     }
 
     .categories-grid {
@@ -581,7 +595,7 @@ img {
 @media (max-width: 768px) {
     .hero {
         height: 100vh;
-        padding-top: 60px; /* Header yüksekliği kadar padding */
+        padding-top: 60px;
     }
 
     .hero-video {
