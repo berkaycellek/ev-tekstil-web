@@ -1847,3 +1847,224 @@ footer {
         height: 120px;
     }
 }
+
+/* Blog Ana Sayfası Stilleri */
+.blog-main-page {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.blog-page-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.blog-page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.blog-page-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.blog-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.blog-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+    background: #f0f0f0;
+}
+
+.filter-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.blog-filters .search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 8px 15px;
+    min-width: 250px;
+}
+
+.blog-filters .search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+.blog-filters .search-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.blog-post-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.blog-post-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.blog-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.blog-post-card:hover .blog-post-image img {
+    transform: scale(1.05);
+}
+
+.blog-post-content {
+    padding: 25px;
+}
+
+.blog-post-meta {
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.blog-post-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.blog-post-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    color: #0056b3;
+    gap: 12px;
+}
+
+.read-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .blog-main-page {
+        padding: 60px 0;
+    }
+
+    .blog-page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .blog-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        justify-content: center;
+    }
+
+    .blog-filters .search-box {
+        width: 100%;
+    }
+
+    .blog-posts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-page-header h1 {
+        font-size: 2rem;
+    }
+
+    .blog-post-image {
+        height: 200px;
+    }
+
+    .blog-post-content {
+        padding: 20px;
+    }
+
+    .blog-post-title {
+        font-size: 1.3rem;
+    }
+}

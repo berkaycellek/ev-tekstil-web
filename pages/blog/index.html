@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Ev Tekstil</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="sticky-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="/">
+                    <img src="../../logo.png" alt="Ev Tekstil Logo" class="logo-img">
+                </a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/">Ana Sayfa</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Kategoriler</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../canta-detay.html">Çantalar</a></li>
+                        <li><a href="../hali-detay.html">Halılar</a></li>
+                        <li><a href="../paspas-detay.html">Banyo Paspasları</a></li>
+                    </ul>
+                </li>
+                <li><a href="/#hakkimizda">Hakkında</a></li>
+                <li><a href="/iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="blog-main-page">
+        <div class="blog-page-header">
+            <h1>Blog</h1>
+            <p class="blog-page-subtitle">Ev dekorasyonu ve tekstil dünyasından en son trendler ve ipuçları</p>
+        </div>
+
+        <div class="blog-page-container">
+            <div class="blog-filters">
+                <div class="filter-group">
+                    <button class="filter-btn active">Tümü</button>
+                    <button class="filter-btn">Dekorasyon</button>
+                    <button class="filter-btn">İlham</button>
+                    <button class="filter-btn">Bakım</button>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Blog yazılarında ara...">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="blog-posts-grid">
+                <article class="blog-post-card">
+                    <div class="blog-post-image">
+                        <img src="../../images/blog/dekorasyon-trendleri.jpg" alt="Ev Dekorasyonunda Tekstil Trendleri" loading="lazy">
+                        <span class="blog-category-tag">Dekorasyon</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span class="blog-date">15 Mart 2024</span>
+                        </div>
+                        <h2 class="blog-post-title">Ev Dekorasyonunda Tekstil Trendleri</h2>
+                        <p class="blog-post-excerpt">2024'ün en popüler tekstil trendleri ve ev dekorasyonunda nasıl kullanılacağı hakkında ipuçları.</p>
+                        <a href="dekorasyon-trendleri.html" class="read-more-btn">
+                            Devamını Oku
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-post-card">
+                    <div class="blog-post-image">
+                        <img src="../../images/blog/dekorasyon-fikirleri.jpg" alt="İlham Verici Dekorasyon Fikirleri" loading="lazy">
+                        <span class="blog-category-tag">İlham</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span class="blog-date">10 Mart 2024</span>
+                        </div>
+                        <h2 class="blog-post-title">İlham Verici Dekorasyon Fikirleri</h2>
+                        <p class="blog-post-excerpt">Yaşam alanlarınızı yeniden tasarlamak için modern ve şık dekorasyon fikirleri.</p>
+                        <a href="dekorasyon-fikirleri.html" class="read-more-btn">
+                            Devamını Oku
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-post-card">
+                    <div class="blog-post-image">
+                        <img src="../../images/blog/urun-bakim.jpg" alt="Ürün Bakım ve Kullanım Rehberleri" loading="lazy">
+                        <span class="blog-category-tag">Bakım</span>
+                    </div>
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            <span class="blog-date">5 Mart 2024</span>
+                        </div>
+                        <h2 class="blog-post-title">Ürün Bakım ve Kullanım Rehberleri</h2>
+                        <p class="blog-post-excerpt">Ürünlerinizin ömrünü uzatmak için profesyonel bakım ve kullanım önerileri.</p>
+                        <a href="urun-bakim.html" class="read-more-btn">
+                            Devamını Oku
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-slogan">
+                <h3>Evinize Şıklık Katın</h3>
+                <p>Özenle seçilmiş koleksiyonumuzla yaşam alanlarınızı yeniden tasarlayın</p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ersu Ahat. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+</html> 
