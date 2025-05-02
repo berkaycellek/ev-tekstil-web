@@ -121,4 +121,83 @@ document.addEventListener('DOMContentLoaded', function() {
             ticking = true;
         }
     });
+
+    // Blog bölümü paralaks efekti
+    const blogSection = document.querySelector('.blog-section');
+    const blogPattern = document.querySelector('.blog-background-pattern');
+    
+    if (blogSection && blogPattern) {
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const blogOffset = blogSection.offsetTop;
+            const blogHeight = blogSection.offsetHeight;
+            
+            // Blog bölümü görünür alanda mı kontrol et
+            if (scrollPosition > blogOffset - window.innerHeight && 
+                scrollPosition < blogOffset + blogHeight) {
+                
+                // Paralaks efekti için hesaplama
+                const progress = (scrollPosition - blogOffset) / blogHeight;
+                const parallaxValue = progress * 50; // 50px maksimum hareket
+                
+                blogPattern.style.transform = `translateY(${-parallaxValue}px)`;
+                
+                // Arka plan gradyanını dinamik olarak güncelle
+                const opacity = 0.95 - (progress * 0.1);
+                blogSection.style.background = `linear-gradient(180deg, 
+                    rgba(249, 246, 240, ${opacity}) 0%,
+                    rgba(249, 246, 240, ${opacity - 0.05}) 50%,
+                    rgba(249, 246, 240, ${opacity - 0.1}) 100%
+                )`;
+            }
+        });
+    }
+
+    // Parçacık efekti
+    function createParticles() {
+        const container = document.querySelector('.particles-container');
+        if (!container) {
+            console.log('Particles container bulunamadı');
+            return;
+        }
+
+        const particleCount = 30;
+        const containerWidth = container.offsetWidth;
+        const containerHeight = container.offsetHeight;
+
+        // Önceki parçacıkları temizle
+        container.innerHTML = '';
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+
+            // Rastgele boyut (5-10px)
+            const size = Math.random() * 5 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            // Rastgele konum
+            const x = Math.random() * containerWidth;
+            const y = Math.random() * containerHeight;
+            particle.style.left = `${x}px`;
+            particle.style.top = `${y}px`;
+
+            // Rastgele animasyon süresi
+            const duration = Math.random() * 10 + 10;
+            particle.style.animationDuration = `${duration}s`;
+
+            // Rastgele opaklık
+            const opacity = Math.random() * 0.1 + 0.1;
+            particle.style.opacity = opacity;
+
+            container.appendChild(particle);
+        }
+    }
+
+    // Sayfa yüklendiğinde ve resize olduğunda parçacıkları oluştur
+    createParticles();
+    
+    // Pencere boyutu değiştiğinde parçacıkları yeniden oluştur
+    window.addEventListener('resize', createParticles);
 }); 
