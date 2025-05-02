@@ -1886,6 +1886,10 @@ footer {
     margin-bottom: 40px;
     flex-wrap: wrap;
     gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .filter-group {
@@ -1902,10 +1906,13 @@ footer {
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 0.9rem;
+    color: #666;
 }
 
 .filter-btn:hover {
     background: #f0f0f0;
+    border-color: #007bff;
+    color: #007bff;
 }
 
 .filter-btn.active {
@@ -1922,6 +1929,12 @@ footer {
     border-radius: 20px;
     padding: 8px 15px;
     min-width: 250px;
+    transition: all 0.3s ease;
+}
+
+.blog-filters .search-box:focus-within {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
 }
 
 .blog-filters .search-box input {
@@ -1930,6 +1943,7 @@ footer {
     flex: 1;
     padding: 5px;
     font-size: 0.9rem;
+    color: #333;
 }
 
 .blog-filters .search-btn {
@@ -1938,12 +1952,18 @@ footer {
     color: #666;
     cursor: pointer;
     padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.blog-filters .search-btn:hover {
+    color: #007bff;
 }
 
 .blog-posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
+    margin-top: 20px;
 }
 
 .blog-post-card {
@@ -1951,7 +1971,15 @@ footer {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.blog-post-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .blog-post-card:hover {

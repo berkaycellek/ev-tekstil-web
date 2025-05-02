@@ -200,4 +200,55 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Pencere boyutu değiştiğinde parçacıkları yeniden oluştur
     window.addEventListener('resize', createParticles);
+
+    // Blog filtreleme fonksiyonları
+    const blogFilterButtons = document.querySelectorAll('.filter-btn');
+    const blogSearchInput = document.querySelector('.blog-filters .search-box input');
+    const blogPosts = document.querySelectorAll('.blog-post-card');
+
+    // Filtreleme fonksiyonu
+    function filterBlogPosts(category, searchTerm) {
+        blogPosts.forEach(post => {
+            const postCategory = post.querySelector('.blog-category-tag').textContent.toLowerCase();
+            const postTitle = post.querySelector('.blog-post-title').textContent.toLowerCase();
+            const postExcerpt = post.querySelector('.blog-post-excerpt').textContent.toLowerCase();
+
+            const matchesCategory = category === 'tümü' || postCategory === category.toLowerCase();
+            const matchesSearch = !searchTerm || 
+                                postTitle.includes(searchTerm) || 
+                                postExcerpt.includes(searchTerm);
+
+            post.style.display = matchesCategory && matchesSearch ? 'block' : 'none';
+        });
+    }
+
+    // Filtre butonlarına tıklama olayı ekle
+    blogFilterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Aktif buton stilini güncelle
+            blogFilterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Filtreleme işlemini gerçekleştir
+            const category = this.textContent;
+            const searchTerm = blogSearchInput ? blogSearchInput.value.toLowerCase() : '';
+            filterBlogPosts(category, searchTerm);
+        });
+    });
+
+    // Arama kutusu için event listener
+    if (blogSearchInput) {
+        blogSearchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const activeCategory = document.querySelector('.filter-btn.active').textContent;
+            filterBlogPosts(activeCategory, searchTerm);
+        });
+    }
+
+    // Sayfa yüklendiğinde filtreleme durumunu kontrol et
+    if (blogPosts.length > 0) {
+        const activeCategory = document.querySelector('.filter-btn.active').textContent;
+        const searchTerm = blogSearchInput ? blogSearchInput.value.toLowerCase() : '';
+        filterBlogPosts(activeCategory, searchTerm);
+    }
 }); 
