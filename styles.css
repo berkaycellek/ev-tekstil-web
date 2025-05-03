@@ -1319,9 +1319,36 @@ footer {
     position: relative;
 }
 
+.blog-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .blog-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card:hover .blog-cta {
+    color: var(--primary-color);
+}
+
+.blog-card:hover .blog-cta i {
+    transform: translateX(5px);
+}
+
+.blog-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.blog-cta i {
+    transition: transform 0.3s ease;
 }
 
 .blog-image {
@@ -1414,29 +1441,6 @@ footer {
     font-size: 0.9rem;
     color: #333;
     font-weight: 500;
-}
-
-.blog-cta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.blog-cta:hover {
-    color: var(--secondary-color);
-    gap: 12px;
-}
-
-.blog-cta i {
-    transition: transform 0.3s ease;
-}
-
-.blog-cta:hover i {
-    transform: translateX(5px);
 }
 
 .blog-section-footer {
