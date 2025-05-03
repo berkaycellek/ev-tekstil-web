@@ -250,12 +250,31 @@ img {
     opacity: 1;
     z-index: 1;
     filter: brightness(0.9);
+    transform: scale(1.1);
+    animation: centerVideoEntrance 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .secondary-video {
     opacity: 1;
     z-index: 0;
     filter: brightness(0.9);
+}
+
+@keyframes centerVideoEntrance {
+    0% {
+        transform: scale(1.2);
+        opacity: 0;
+        clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);
+    }
 }
 
 .hero-content {
@@ -280,7 +299,9 @@ img {
     text-transform: uppercase;
     margin-bottom: 1rem;
     color: rgba(255, 255, 255, 0.9);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.3),
+        0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-title {
@@ -291,7 +312,10 @@ img {
     text-align: left;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.98);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.5px;
 }
 
 .hero-description {
@@ -301,7 +325,9 @@ img {
     max-width: 600px;
     text-align: left;
     line-height: 1.6;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 
+        1px 1px 2px rgba(0, 0, 0, 0.3),
+        0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-buttons {
@@ -363,6 +389,22 @@ img {
 
 /* Masaüstü için özel ayarlar */
 @media (min-width: 1025px) {
+    .desktop-hidden {
+        display: none !important;
+    }
+
+    .hero-subtitle {
+        display: none;
+    }
+
+    .hero-title {
+        font-size: 4.5rem;
+        margin-bottom: 1.5rem;
+        text-shadow: 
+            3px 3px 6px rgba(0, 0, 0, 0.4),
+            0 0 30px rgba(0, 0, 0, 0.3);
+    }
+
     .hero-videos {
         display: flex;
         justify-content: space-between;
@@ -380,6 +422,7 @@ img {
 
     .center-video {
         clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);
+        transform-origin: center;
     }
 
     .secondary-video {
@@ -389,16 +432,19 @@ img {
     .hero:hover .primary-video {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         filter: brightness(1);
+        transform: scale(1.05);
     }
 
     .hero:hover .center-video {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         filter: brightness(1);
+        transform: scale(1.05);
     }
 
     .hero:hover .secondary-video {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
         filter: brightness(1);
+        transform: scale(1.05);
     }
 
     .hero-content {
@@ -406,16 +452,12 @@ img {
         padding: 4rem;
     }
 
-    .hero-title {
-        font-size: 4.5rem;
-        margin-bottom: 1.5rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    }
-
     .hero-description {
         font-size: 1.35rem;
         margin-bottom: 2.5rem;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+        text-shadow: 
+            2px 2px 4px rgba(0, 0, 0, 0.4),
+            0 0 20px rgba(0, 0, 0, 0.3);
     }
 
     .hero-buttons {
