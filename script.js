@@ -2,11 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     const dropdowns = document.querySelectorAll('.dropdown');
+    const menuItems = document.querySelectorAll('.nav-links a');
 
     // Mobil menü toggle
     mobileMenuBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         navLinks.classList.toggle('active');
+        
+        // Her menü öğesine animasyon gecikmesi ekle
+        menuItems.forEach((item, index) => {
+            item.style.setProperty('--i', index);
+        });
     });
 
     // Mobil dropdown toggle
