@@ -2149,3 +2149,149 @@ footer {
         font-size: 1rem;
     }
 }
+
+.share-section {
+    padding: 4rem 0;
+    background: #ffffff;
+}
+
+.share-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.share-header {
+    margin-bottom: 3rem;
+}
+
+.share-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.share-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.share-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #333;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.share-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 136, 229, 0.1);
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.share-button i {
+    position: relative;
+    z-index: 1;
+}
+
+.share-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.share-button:hover::before {
+    background: rgba(30, 136, 229, 0.2);
+}
+
+/* Sosyal medya platformlarına özel renkler */
+.share-button[aria-label*="Facebook"] {
+    color: #1877F2;
+}
+
+.share-button[aria-label*="Twitter"] {
+    color: #1DA1F2;
+}
+
+.share-button[aria-label*="LinkedIn"] {
+    color: #0A66C2;
+}
+
+.share-button[aria-label*="WhatsApp"] {
+    color: #25D366;
+}
+
+.share-button[aria-label*="Instagram"] {
+    color: #E1306C;
+}
+
+@media (max-width: 768px) {
+    .share-section {
+        padding: 3rem 0;
+    }
+
+    .share-container {
+        padding: 0 1.5rem;
+    }
+
+    .share-buttons {
+        gap: 1rem;
+    }
+
+    .share-button {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .share-section {
+        padding: 2.5rem 0;
+    }
+
+    .share-title {
+        font-size: 1.6rem;
+    }
+
+    .share-subtitle {
+        font-size: 1rem;
+    }
+
+    .share-buttons {
+        gap: 0.8rem;
+    }
+
+    .share-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+}
