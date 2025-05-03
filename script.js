@@ -257,4 +257,46 @@ document.addEventListener('DOMContentLoaded', function() {
         const searchTerm = blogSearchInput ? blogSearchInput.value.toLowerCase() : '';
         filterBlogPosts(activeCategory, searchTerm);
     }
+
+    // İstatistik Kartları Animasyonu
+    function animateStats() {
+        const statItems = document.querySelectorAll('.stat-item');
+        const statNumbers = document.querySelectorAll('.stat-number');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Sayı animasyonu
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    if (statNumber) {
+                        const target = parseInt(statNumber.getAttribute('data-count'));
+                        let current = 0;
+                        const duration = 2000; // 2 saniye
+                        const increment = target / (duration / 16); // 60fps için 16ms
+
+                        const animate = () => {
+                            current += increment;
+                            if (current < target) {
+                                statNumber.textContent = Math.floor(current) + '+';
+                                requestAnimationFrame(animate);
+                            } else {
+                                statNumber.textContent = target + '+';
+                            }
+                        };
+
+                        animate();
+                    }
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        statItems.forEach(item => observer.observe(item));
+    }
+
+    // Sayfa yüklendiğinde animasyonları başlat
+    animateStats();
 }); 
