@@ -1706,3 +1706,79 @@ footer {
         height: 200px;
     }
 }
+
+/* Paylaşım Bölümü */
+.share-section {
+    padding: 60px 0;
+    background: transparent;
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.share-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #333;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.share-button i {
+    font-size: 1.2rem;
+}
+
+.share-button:hover {
+    transform: translateY(-3px);
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.share-button:hover i {
+    color: var(--primary-color);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .share-section {
+        padding: 40px 0;
+    }
+
+    .share-buttons {
+        gap: 20px;
+    }
+
+    .share-button {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 480px) {
+    .share-section {
+        padding: 30px 0;
+    }
+
+    .share-buttons {
+        gap: 16px;
+    }
+
+    .share-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .share-button i {
+        font-size: 1rem;
+    }
+}
