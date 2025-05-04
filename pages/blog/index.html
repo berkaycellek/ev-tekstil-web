@@ -7,6 +7,106 @@
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .blog-index-page {
+            padding: 4rem 0;
+            background: #fff;
+        }
+        
+        .blog-index-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .blog-index-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .blog-index-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .blog-filter-container {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .blog-filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: #fff;
+            border: none;
+            border-radius: 8px;
+            color: #555;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-filter-btn:hover,
+        .blog-filter-btn.active {
+            background: #1E88E5;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(30, 136, 229, 0.2);
+        }
+        
+        .blog-index-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-index-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                padding: 0 1.5rem;
+                gap: 2rem;
+            }
+            
+            .blog-filter-container {
+                padding: 1rem;
+            }
+            
+            .blog-filter-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .blog-index-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            
+            .blog-index-page {
+                padding: 3rem 0;
+            }
+            
+            .blog-index-title {
+                font-size: 2rem;
+            }
+            
+            .blog-index-subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="sticky-header">
@@ -20,7 +120,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links">
-                <li><a href="/">Ana Sayfa</a></li>
+                <li><a href="../../index.html">Ana Sayfa</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Kategoriler</a>
                     <ul class="dropdown-menu">
@@ -29,141 +129,59 @@
                         <li><a href="../paspas-detay.html">Banyo Paspasları</a></li>
                     </ul>
                 </li>
-                <li><a href="/#hakkimizda">Hakkımızda</a></li>
-                <li><a href="/#iletisim">İletişim</a></li>
+                <li><a href="./index.html" class="active">Blog</a></li>
+                <li><a href="../../index.html#hakkimizda">Hakkında</a></li>
+                <li><a href="../../index.html#iletisim">İletişim</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="blog-main-page">
-        <div class="blog-hero">
-            <div class="blog-hero-content">
-                <h1>Blog</h1>
-                <p class="blog-hero-subtitle">Ev dekorasyonu ve tekstil dünyasından en son trendler ve ipuçları</p>
-            </div>
+    <main class="blog-index-page">
+        <div class="blog-index-header">
+            <h1 class="blog-index-title">Blog</h1>
+            <p class="blog-index-subtitle">Ev dekorasyonu ve tekstil dünyasından en son trendler, fikirler ve bakım ipuçları.</p>
         </div>
+        
+        <div class="blog-filter-container">
+            <button class="blog-filter-btn active">Tümü</button>
+            <button class="blog-filter-btn">Dekorasyon</button>
+            <button class="blog-filter-btn">İlham</button>
+            <button class="blog-filter-btn">Bakım</button>
+        </div>
+        
+        <div class="blog-index-grid">
+            <blog-card
+                title="Ev Dekorasyonunda Tekstil Trendleri"
+                excerpt="2024'ün en popüler tekstil trendleri ve ev dekorasyonunda nasıl kullanılacağı hakkında ipuçları."
+                image="../../images/blog/dekorasyon-trendleri.jpg"
+                category="Dekorasyon"
+                date="15 Mart 2025"
+                author-name="Ersu Ahat"
+                author-image="../../images/author.jpg"
+                link="./dekorasyon-trendleri.html"
+            ></blog-card>
 
-        <div class="blog-page-container">
-            <div class="blog-filters">
-                <div class="filter-group">
-                    <button class="filter-btn active">Tümü</button>
-                    <button class="filter-btn">Dekorasyon</button>
-                    <button class="filter-btn">İlham</button>
-                    <button class="filter-btn">Bakım</button>
-                </div>
-                <div class="search-box">
-                    <input type="text" placeholder="Blog yazılarında ara...">
-                    <button class="search-btn">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
+            <blog-card
+                title="İlham Verici Dekorasyon Fikirleri"
+                excerpt="Yaşam alanlarınızı yeniden tasarlamak için modern ve şık dekorasyon fikirleri."
+                image="../../images/blog/dekorasyon-fikirleri.jpg"
+                category="İlham"
+                date="10 Mart 2025"
+                author-name="Ersu Ahat"
+                author-image="../../images/author.jpg"
+                link="./dekorasyon-fikirleri.html"
+            ></blog-card>
 
-            <div class="blog-posts-grid">
-                <article class="blog-post-card">
-                    <a href="dekorasyon-trendleri.html" class="blog-post-link">
-                        <div class="blog-post-image">
-                            <img src="../../images/blog/dekorasyon-trendleri.jpg" alt="Ev Dekorasyonunda Tekstil Trendleri" loading="lazy">
-                            <div class="blog-post-overlay">
-                                <span class="blog-category-tag">Dekorasyon</span>
-                                <span class="blog-date">15 Mart 2025</span>
-                            </div>
-                        </div>
-                        <div class="blog-post-content">
-                            <h2 class="blog-post-title">Ev Dekorasyonunda Tekstil Trendleri</h2>
-                            <p class="blog-post-excerpt">2024'ün en popüler tekstil trendleri ve ev dekorasyonunda nasıl kullanılacağı hakkında ipuçları.</p>
-                            <div class="blog-post-meta">
-                                <div class="blog-author">
-                                    <img src="../../images/author.jpg" alt="Yazar" class="author-avatar">
-                                    <span class="author-name">Ersu Ahat</span>
-                                </div>
-                                <div class="read-more-btn">
-                                    <span>Devamını Oku</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="blog-post-card">
-                    <a href="dekorasyon-fikirleri.html" class="blog-post-link">
-                        <div class="blog-post-image">
-                            <img src="../../images/blog/dekorasyon-fikirleri.jpg" alt="İlham Verici Dekorasyon Fikirleri" loading="lazy">
-                            <div class="blog-post-overlay">
-                                <span class="blog-category-tag">İlham</span>
-                                <span class="blog-date">10 Mart 2025</span>
-                            </div>
-                        </div>
-                        <div class="blog-post-content">
-                            <h2 class="blog-post-title">İlham Verici Dekorasyon Fikirleri</h2>
-                            <p class="blog-post-excerpt">Yaşam alanlarınızı yeniden tasarlamak için modern ve şık dekorasyon fikirleri.</p>
-                            <div class="blog-post-meta">
-                                <div class="blog-author">
-                                    <img src="../../images/author.jpg" alt="Yazar" class="author-avatar">
-                                    <span class="author-name">Ersu Ahat</span>
-                                </div>
-                                <div class="read-more-btn">
-                                    <span>Devamını Oku</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="blog-post-card">
-                    <a href="urun-bakim.html" class="blog-post-link">
-                        <div class="blog-post-image">
-                            <img src="../../images/blog/urun-bakim.jpg" alt="Ürün Bakım ve Kullanım Rehberleri" loading="lazy">
-                            <div class="blog-post-overlay">
-                                <span class="blog-category-tag">Bakım</span>
-                                <span class="blog-date">5 Mart 2025</span>
-                            </div>
-                        </div>
-                        <div class="blog-post-content">
-                            <h2 class="blog-post-title">Ürün Bakım ve Kullanım Rehberleri</h2>
-                            <p class="blog-post-excerpt">Ürünlerinizin ömrünü uzatmak için profesyonel bakım ve kullanım önerileri.</p>
-                            <div class="blog-post-meta">
-                                <div class="blog-author">
-                                    <img src="../../images/author.jpg" alt="Yazar" class="author-avatar">
-                                    <span class="author-name">Ersu Ahat</span>
-                                </div>
-                                <div class="read-more-btn">
-                                    <span>Devamını Oku</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="blog-post-card">
-                    <a href="surdurulebilirlik.html" class="blog-post-link">
-                        <div class="blog-post-image">
-                            <img src="../../images/blog/surdurulebilirlik.jpg" alt="Sürdürülebilirlik ve Çevre Dostu Tekstiller" loading="lazy">
-                            <div class="blog-post-overlay">
-                                <span class="blog-category-tag">Sürdürülebilirlik</span>
-                                <span class="blog-date">20 Mart 2025</span>
-                            </div>
-                        </div>
-                        <div class="blog-post-content">
-                            <h2 class="blog-post-title">Sürdürülebilirlik ve Çevre Dostu Tekstiller</h2>
-                            <p class="blog-post-excerpt">Ev tekstilinde sürdürülebilirlik neden önemli? Çevre dostu halılar ve diğer tekstil ürünleriyle evinizi nasıl daha sürdürülebilir hale getirebilirsiniz?</p>
-                            <div class="blog-post-meta">
-                                <div class="blog-author">
-                                    <img src="../../images/author.jpg" alt="Yazar" class="author-avatar">
-                                    <span class="author-name">Ersu Ahat</span>
-                                </div>
-                                <div class="read-more-btn">
-                                    <span>Devamını Oku</span>
-                                    <i class="fas fa-arrow-right"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-            </div>
+            <blog-card
+                title="Ürün Bakım ve Kullanım Rehberleri"
+                excerpt="Ürünlerinizin ömrünü uzatmak için profesyonel bakım ve kullanım önerileri."
+                image="../../images/blog/urun-bakim.jpg"
+                category="Bakım"
+                date="5 Mart 2025"
+                author-name="Ersu Ahat"
+                author-image="../../images/author.jpg"
+                link="./urun-bakim.html"
+            ></blog-card>
         </div>
     </main>
 
@@ -183,7 +201,33 @@
             </div>
         </div>
     </footer>
-
     <script src="../../script.js"></script>
+    <script src="../../components/blog/BlogCard.js"></script>
+    <script>
+        // Kategori filtreleme fonksiyonu
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.blog-filter-btn');
+            const blogCards = document.querySelectorAll('blog-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Aktif buton sınıfını güncelle
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const category = button.textContent;
+                    
+                    // Kartları filtrele
+                    blogCards.forEach(card => {
+                        if (category === 'Tümü' || card.getAttribute('category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html> 

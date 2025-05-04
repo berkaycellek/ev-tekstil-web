@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürün Bakım ve Kullanım Rehberleri - Ev Tekstil Blog</title>
+    <title>Ürün Bakım ve Kullanım Rehberleri - Ev Tekstil</title>
     <link rel="stylesheet" href="../../styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links">
-                <li><a href="/">Ana Sayfa</a></li>
+                <li><a href="../../index.html">Ana Sayfa</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Kategoriler</a>
                     <ul class="dropdown-menu">
@@ -29,73 +29,91 @@
                         <li><a href="../paspas-detay.html">Banyo Paspasları</a></li>
                     </ul>
                 </li>
-                <li><a href="/#hakkimizda">Hakkında</a></li>
-                <li><a href="/iletisim">İletişim</a></li>
+                <li><a href="./index.html" class="active">Blog</a></li>
+                <li><a href="../../index.html#hakkimizda">Hakkında</a></li>
+                <li><a href="../../index.html#iletisim">İletişim</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="blog-detail-page">
-        <article class="blog-detail-container">
-            <div class="blog-detail-header">
-                <div class="blog-detail-meta">
-                    <span class="blog-category">Bakım</span>
-                    <span class="blog-date">5 Mart 2025</span>
-                </div>
-                <h1 class="blog-detail-title">Ürün Bakım ve Kullanım Rehberleri</h1>
-                <div class="blog-detail-author">
-                    <img src="../../images/author.jpg" alt="Yazar" class="author-image">
-                    <div class="author-info">
-                        <span class="author-name">Ersu Ahat</span>
-                        <span class="author-title">Ev Tekstil Kurucusu</span>
-                    </div>
-                </div>
-            </div>
+    <main>
+        <blog-detail
+            title="Ürün Bakım ve Kullanım Rehberleri"
+            date="5 Mart 2025"
+            category="Bakım"
+            author-name="Ersu Ahat"
+            author-role="Bakım Uzmanı"
+            author-image="../../images/author.jpg"
+            featured-image="../../images/blog/urun-bakim.jpg"
+        >
+            <p>Tekstil ürünlerinin ömrünü uzatmak ve her zaman ilk günkü görünümlerini korumak için doğru bakım ve kullanım şekilleri büyük önem taşır. Bu yazımızda, tekstil ürünlerinizin ömrünü uzatmak için profesyonel bakım ve kullanım önerilerini sizlerle paylaşacağız.</p>
 
-            <div class="blog-detail-image">
-                <img src="../../images/blog/urun-bakim.jpg" alt="Ürün Bakım ve Kullanım Rehberleri" loading="lazy">
-            </div>
+            <h2>Çantaların Bakımı ve Saklanması</h2>
+            <p>Çantalar, doğru bakım ve kullanım ile uzun yıllar dayanabilecek aksesuarlardır. Malzeme türüne göre farklı bakım teknikleri uygulansa da, bazı temel kurallar tüm çanta türleri için geçerlidir.</p>
+            
+            <img src="../../images/blog/canta-bakim.jpg" alt="Çanta Bakım Görseli">
+            
+            <h3>Temel Çanta Bakım İpuçları</h3>
+            <ul>
+                <li>Çantanızı kullanmadığınız zamanlarda, kendi toz torbasında veya pamuklu bir kumaşa sarılı şekilde saklayın.</li>
+                <li>Çantanızı aşırı nemli veya kuru ortamlarda bırakmayın. İdeal saklama koşulları, normal oda sıcaklığı ve nemidir.</li>
+                <li>Çantanızın içini düzenli olarak temizleyin ve gereksiz ağırlık taşımaktan kaçının.</li>
+                <li>Deri çantaları direkt güneş ışığına maruz bırakmayın, renk solmasına neden olabilir.</li>
+                <li>Yağmur veya kar gibi hava koşullarında, çantanızı koruyucu bir sprey ile önceden hazırlayın.</li>
+            </ul>
+            
+            <blockquote>
+                Çantanızın doğru şekilde saklanması, ömrünü uzatan en önemli faktörlerden biridir. Kullanmadığınız zamanlarda, doldurulmuş kağıt ile şeklini koruyarak saklayın.
+            </blockquote>
 
-            <div class="blog-detail-content">
-                <div class="blog-detail-text">
-                    <p class="lead-text">Ev tekstil ürünlerinizin ömrünü uzatmak ve her zaman en iyi görünümünü korumak için profesyonel bakım ve kullanım önerileri. Doğru bakım teknikleriyle ürünlerinizi yıllarca kullanabilirsiniz.</p>
+            <h2>Halıların Bakımı ve Temizliği</h2>
+            <p>Halılar, ev dekorasyonunun önemli parçalarıdır ve düzenli bakım ile uzun yıllar güzelliklerini koruyabilirler. Halı türüne bağlı olarak farklı temizlik yöntemleri olsa da, bazı temel bakım kuralları tüm halılar için geçerlidir.</p>
+            
+            <h3>Günlük ve Haftalık Halı Bakımı</h3>
+            <p>Halılarınızın ömrünü uzatmak için düzenli olarak elektrikli süpürge ile temizlenmesi gerekir. Yoğun kullanım alanlarında, haftalık süpürme yeterli olmayabilir, bu durumda daha sık süpürmeniz önerilir.</p>
+            
+            <p>Dökülen sıvılar ve lekeler için, hemen müdahale etmek önemlidir. Lekeleri temizlerken, dairesel hareketler yerine, dıştan içe doğru hafifçe bastırarak silin.</p>
+            
+            <h3>Derin Temizlik Önerileri</h3>
+            <p>Yılda en az bir kez, halılarınızın derin temizliği yapılmalıdır. Bu, profesyonel bir halı temizleme hizmeti ile veya evde uygun ekipmanlarla yapılabilir.</p>
+            
+            <img src="../../images/blog/hali-temizlik.jpg" alt="Halı Temizlik Görseli">
+            
+            <p>Ev tipi halı temizleme makineleri kullanırken, halınızın fazla ıslanmamasına dikkat edin ve temizlik sonrası tamamen kurumasını sağlayın.</p>
 
-                    <h2>1. Halı Bakımı</h2>
-                    <p>Halılarınızın ömrünü uzatmak için düzenli bakım yapmanız önemlidir. Haftalık vakumlama, aylık derinlemesine temizlik ve leke oluşumuna karşı hızlı müdahale, halılarınızın uzun süre yeni görünümünü korumasını sağlar.</p>
+            <h2>Banyo Paspaslarının Hijyenik Kullanımı</h2>
+            <p>Banyo paspasları, sık sık neme ve bakterilere maruz kaldıkları için düzenli temizlik ve bakım gerektiren tekstil ürünleridir. Hijyenik ve uzun ömürlü kullanım için şu önerileri dikkate alabilirsiniz.</p>
+            
+            <h3>Temizlik Sıklığı</h3>
+            <p>Banyo paspaslarınızı en az iki haftada bir yıkamanız önerilir. Çok kişinin kullandığı banyolarda ise haftalık yıkama daha uygun olabilir.</p>
+            
+            <p>Yıkama sırasında, paspasınızın etiketinde belirtilen talimatlara uygun hareket edin. Genellikle ılık su ve hafif deterjan, çoğu banyo paspası için uygundur.</p>
+            
+            <h3>Kurutma ve Saklama</h3>
+            <p>Banyo paspaslarınızı tamamen kurutmadan yerleştirmeyin. Nemli paspaslar, küf ve bakteri oluşumuna neden olabilir.</p>
+            
+            <p>Eğer banyo paspasınızın altında kauçuk veya kaymaz bir taban varsa, kurutma makinesinde kurutmak yerine açık havada kurutmayı tercih edin.</p>
 
-                    <h2>2. Çanta Bakımı</h2>
-                    <p>Çantalarınızın kumaş ve deri yüzeylerini korumak için düzenli bakım yapmanız gerekiyor. Nemli bezle silme, özel bakım ürünleri kullanma ve doğru saklama koşulları, çantalarınızın uzun süre dayanmasını sağlar.</p>
+            <h2>Tekstil Ürünleri İçin Genel Bakım İpuçları</h2>
+            <p>Tüm tekstil ürünleri için geçerli olan bazı temel bakım ipuçları şunlardır:</p>
+            
+            <ul>
+                <li>Ürün etiketindeki bakım talimatlarını mutlaka okuyun ve uygulayın.</li>
+                <li>Yıkama öncesi renk ayırımı yapın ve benzer renkleri bir arada yıkayın.</li>
+                <li>Çok sıcak su ve sert deterjanlar, tekstil ürünlerinin rengini soldurabilir ve dokusunu bozabilir.</li>
+                <li>Kurutma sırasında direkt güneş ışığından kaçının, özellikle canlı renkli tekstiller için bu önemlidir.</li>
+                <li>Ütüleme yaparken, ürünün kumaş tipine uygun ısı ayarı kullanın.</li>
+            </ul>
+            
+            <blockquote>
+                Tekstil ürünlerinizin ömrünü uzatmanın sırrı, düzenli ve doğru bakımdır. Az sayıda kaliteli ürüne sahip olmak ve onlara iyi bakmak, çok sayıda kısa ömürlü ürüne sahip olmaktan daha ekonomik ve çevre dostudur.
+            </blockquote>
 
-                    <h2>3. Banyo Paspası Bakımı</h2>
-                    <p>Banyo paspaslarınızın hijyenini ve görünümünü korumak için düzenli yıkama ve kurutma önemlidir. Doğru deterjan seçimi ve yıkama sıcaklığı, paspaslarınızın renk ve dokusunu korumasına yardımcı olur.</p>
-
-                    <div class="blog-detail-cta">
-                        <p>Bakım ürünlerimizi incelemek için koleksiyonumuza göz atın:</p>
-                        <a href="/#kategoriler" class="cta-button primary">Koleksiyonu Keşfet</a>
-                    </div>
-                </div>
-
-                <div class="blog-detail-sidebar">
-                    <div class="related-posts">
-                        <h3>İlgili Yazılar</h3>
-                        <div class="related-post-card">
-                            <img src="../../images/blog/dekorasyon-trendleri.jpg" alt="Ev Dekorasyonunda Tekstil Trendleri" loading="lazy">
-                            <div class="related-post-content">
-                                <h4>Ev Dekorasyonunda Tekstil Trendleri</h4>
-                                <a href="dekorasyon-trendleri.html" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="related-post-card">
-                            <img src="../../images/blog/dekorasyon-fikirleri.jpg" alt="İlham Verici Dekorasyon Fikirleri" loading="lazy">
-                            <div class="related-post-content">
-                                <h4>İlham Verici Dekorasyon Fikirleri</h4>
-                                <a href="dekorasyon-fikirleri.html" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </article>
+            <h2>Sonuç</h2>
+            <p>Tekstil ürünlerinizin bakımını düzenli olarak yapmak, sadece ürünlerin ömrünü uzatmakla kalmaz, aynı zamanda evinizin genel görünümünü ve hijyenini de olumlu etkiler.</p>
+            
+            <p>Unutmayın, kaliteli bir tekstil ürünü, doğru bakım ile yıllarca ilk günkü güzelliğini koruyabilir. Bu yazıda paylaştığımız önerileri uygulayarak, tekstil ürünlerinizden maksimum verim alabilir ve gereksiz yenileme maliyetlerinden tasarruf edebilirsiniz.</p>
+        </blog-detail>
     </main>
 
     <footer class="footer">
@@ -105,7 +123,7 @@
                 <p>Özenle seçilmiş koleksiyonumuzla yaşam alanlarınızı yeniden tasarlayın</p>
             </div>
             <div class="social-links">
-                <a href="#" class="social-link" aria-label="Instagram">
+                <a href="https://www.instagram.com/ersuahathome.design?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
@@ -114,7 +132,8 @@
             </div>
         </div>
     </footer>
-
     <script src="../../script.js"></script>
+    <script src="../../components/blog/BlogCard.js"></script>
+    <script src="../../components/blog/BlogDetail.js"></script>
 </body>
 </html> 
