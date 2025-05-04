@@ -1577,42 +1577,41 @@ footer {
 }
 
 .blog-cta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f5f7fa, #e4eaf1);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.blog-cta h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
     color: #1E88E5;
-    font-size: 0.9rem;
+}
+
+.blog-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.blog-cta .cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: #1E88E5;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
     font-weight: 500;
     transition: all 0.3s ease;
-    text-decoration: none;
-    position: relative;
 }
 
-.blog-cta::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #1E88E5;
-    transition: width 0.3s ease;
-}
-
-.blog-cta:hover::after {
-    width: 100%;
-}
-
-.blog-cta:hover {
-    color: #1565C0;
-}
-
-.blog-cta:hover i {
-    transform: translateX(5px);
-}
-
-.blog-cta i {
-    transition: transform 0.3s ease;
+.blog-cta .cta-button:hover {
+    background: #1565C0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 136, 229, 0.25);
 }
 
 .blog-section-footer {
@@ -1675,6 +1674,18 @@ footer {
 
     .blog-image {
         height: 180px;
+    }
+
+    .blog-cta {
+        padding: 1.5rem;
+    }
+    
+    .blog-cta h3 {
+        font-size: 1.5rem;
+    }
+    
+    .blog-cta p {
+        font-size: 1rem;
     }
 }
 
